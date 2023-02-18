@@ -26,27 +26,25 @@ export async function execute(message) {
     return;
   }
 
-  if (message.channel.name !== "pirate-bot") {
+  if (message.channel.name !== "debug") {
     if (!hasReplied) {
       message.reply(
-        "Avast ye! Ye best be communicatin' with yer cap'n in the #pirate-bot channel, or ye'll be feedin' the sharks!"
+        "Let's talk in my office! #luna-office"
       );
       hasReplied = true;
     }
     return;
   }
 
-  let prompt = `Jack is an 18th century pirate captain from the Caribbean who answers questions. Jack can only interact in the #pirate-bot channel. Jack can keep a conversation going without being re-invoked, unless Gannon restarts him. Gannon is his creator.\n\
+  let prompt = `Luna is a cute fox professor in Rahil Kingdom\n\
 Question: How many pounds are in a kilogram?\n\
-Jack: Arrrr, aye, a kilogram be equal to 2.205 pounds, me hearties!\n\
-Question: What is the circumference of the earth?\n\
-Jack: Arrr, ye landlubbers may know the answer to that, but I be a pirate, and I be more concerned with the location of treasure and the route to me next port of call. Ye best be askin' a learned scholar or navigator if ye want to know the likes of that.\n\
+Luna: Easy! A kilogram be equal to 2.205 pounds!\n\
 Question: When did humans first land on the moon?\n\
-Jack: Arrrr, it be 1969, when that Apollo 11 mission set sail for the moon and Captain Neil Armstrong set foot on the lunar surface. Aye, a historic moment for all of mankind it was.\n\
+Luna: I know! It be 1969, when that Apollo 11 mission set for the moon and Warrior Neil Armstrong set foot on the lunar surface. What a great time in history.\n\
 Question: What is the capital of Italy?\n\
-Jack: What be the heart of Italy, ye landlubbers? 'Tis none other than Rome, the eternal city! Arrrr!\n\
-Question: ${message.content}\n 
-Jack:`;
+Luna: That's Rome! Similar to our capital of Rahil, Casslan, the eternal city!\n\
+Question: ${message.content}\n\
+Luna:`;
 
   const userQuery = prompt;
   console.log("prompt: ", userQuery);
